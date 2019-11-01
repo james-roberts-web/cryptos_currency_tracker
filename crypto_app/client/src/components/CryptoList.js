@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import CryptoItem from '../components/CryptoItem'
 
-const CryptoList = ()  => {
+const CryptoList = ({cryptos})  => {
+  const cryptoNodes = cryptos.map((crypto, index) => {
+    return <CryptoItem key={index} name={crypto.id} />
+  });
 
   return(
-    <CryptoItem />
+    <div>
+      {cryptoNodes}
+    </div>
   )
 }
 

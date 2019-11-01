@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-const CryptoItem = ()  => {
+const CryptoItem = ({name})  => {
 
   return(
-    <h1>ITEM</h1>
+    <h1>{name}</h1>
   )
 }
 

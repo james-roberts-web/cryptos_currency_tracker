@@ -13,7 +13,7 @@ class DataContainer extends Component {
   componentDidMount() {
     fetch('https://api.coincap.io/v2/assets')
     .then(res => res.json(res))
-    .then(cryptos => this.setState({cryptos}))
+    .then(({data}) => this.setState({cryptos: data}))
     .catch(err => console.error(err));
   }
 
