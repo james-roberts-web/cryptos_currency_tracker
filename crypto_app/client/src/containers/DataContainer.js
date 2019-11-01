@@ -19,7 +19,7 @@ class DataContainer extends Component {
 
   render() {
     return(
-      <CryptoList />
+      <CryptoList cryptos={this.state.cryptos}/>
     )
   }
 };
