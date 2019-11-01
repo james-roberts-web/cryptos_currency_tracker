@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import CryptoItem from '../components/CryptoItem'
 
 const CryptoList = ()  => {
 
   return(
-    <h1>LIST</h1>
+    <CryptoItem />
   )
 }
 
