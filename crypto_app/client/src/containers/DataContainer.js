@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CryptoList from '../components/CryptoList'
 
 class DataContainer extends Component {
 
@@ -18,7 +19,7 @@ class DataContainer extends Component {
 
   render() {
     return(
-      <h1>CONTAINER</h1>
+      <CryptoList />
     )
   }
 };
