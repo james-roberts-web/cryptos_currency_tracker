@@ -17,7 +17,7 @@ db.user.insertMany([
     portfolio: ["Bitcoin", "Monero"]
   },
   {
-    name: "Frank",
+    name: "Frankie",
     wallet_value: "300",
     portfolio: ["Bitcoin"]
   }
