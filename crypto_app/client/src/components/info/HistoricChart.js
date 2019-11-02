@@ -13,14 +13,14 @@ const HistoricChart = (props) => {
 
 
   // const priceData = props.historicData.prices
-
+  //
   // priceData.unshift(['Date', 'price']);
 
-  // const priceData = [['date','price'],[56546,3456],[34563,3456]]
+  const priceData = [['date','price'],[56546,3456],[34563,3456]]
 
-  const mCapData = props.historicData.market_caps
+  const mCapData = [['date','cap'],[56546,3456],[34563,3456]]
 
-  const volumeData = props.historicData.total_volumes
+  const volumeData = [['date','volume'],[56546,3456],[34563,3456]]
 
 
   const PriceChart = () => {

@@ -7,7 +7,7 @@ import HistoricChart from '../components/info/HistoricChart'
 import DetailContainer from './DetailContainer'
 
 
-class DataContainer extends Component {
+class TopContainer extends Component {
 
   constructor(props) {
     super(props);
@@ -44,4 +44,4 @@ class DataContainer extends Component {
   }
 };
 
-export default DataContainer;
+export default TopContainer;
