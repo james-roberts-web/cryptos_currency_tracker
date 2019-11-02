@@ -6,22 +6,20 @@ const SummaryChart = (props) => {
 
   const options = {
     title: "Top 10 Cryptocurrencies",
-    // hAxis: { title: "Age", viewWindow: { min: 0, max: 100 } },
-    // vAxis: { title: "Weight", viewWindow: { min: 0, max: 15 } },
+    hAxis: { title: "CryptoCurrency"},
+    vAxis: { title: "Percent Change This Hour" },
     legend: "none",
-    candlestick: {
-      fallingColor: { strokeWidth: 0, fill: '#a52714' }, // red
-      risingColor: { strokeWidth: 0, fill: '#0f9d58' }, // green
+    columnchart: {
+      negativeColor: { strokeWidth: 0, fill: '#a52714' }, // red
+      positiveColor: { strokeWidth: 0, fill: '#0f9d58' }, // green
     },
   };
 
-  // const data = () => {
-  //   const smallData = props.cryptos.slice(0,10)
     const data = props.cryptos.slice(0,10).map((coin) => {
       return [coin.name, coin.price_change_percentage_1h_in_currency]
     })
-    data.unshift(['Name', 'change%'])
-    console.log(data);
+    data.unshift(['Name', 'change%']);
+
 
 
 
