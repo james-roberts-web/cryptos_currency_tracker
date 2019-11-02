@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 // import CurrencyList from '../components/CurrencyList'
-import CurrencySelector from '../components/CurrencySelector'
-import CryptoDetail from '../components/CryptoDetail'
-import SummaryChart from '../components/SummaryChart'
-import HistoricChart from '../components/HistoricChart'
+import CurrencySelector from '../components/info/CurrencySelector'
+import CryptoDetail from '../components/info/CryptoDetail'
+import SummaryChart from '../components/info/SummaryChart'
+import HistoricChart from '../components/info/HistoricChart'
 import DetailContainer from './DetailContainer'
 
 

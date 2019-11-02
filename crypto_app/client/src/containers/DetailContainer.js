@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CryptoDetail from '../components/CryptoDetail'
-import HistoricChart from '../components/HistoricChart'
+import CryptoDetail from '../components/info/CryptoDetail'
+import HistoricChart from '../components/info/HistoricChart'
 
 
 class DetailContainer extends Component {
@@ -40,7 +40,7 @@ class DetailContainer extends Component {
         <div className="detail">
         <h1></h1>
         <CryptoDetail currency={this.props.currency}/>
-        <HistoricChart historicData={this.state.historicData} />
+        <HistoricChart prices={this.state.historicData} />
         </div>
       )
     }
