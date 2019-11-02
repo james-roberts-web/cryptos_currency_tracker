@@ -32,7 +32,7 @@ class DataContainer extends Component {
 
   render() {
     return(
-      <div>
+      <div className="main">
       <h1> my Cryptos App</h1>
         <CurrencySelector cryptos={this.state.cryptos} onCurrencySelected={ this.handleCurrencySelected }/>
         <CryptoDetail currency={ this.state.currentCurrency } />
