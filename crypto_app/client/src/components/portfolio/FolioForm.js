@@ -44,24 +44,24 @@ class PortfolioForm extends Component {
   render() {
     return (
       <form id="portfolioForm" onSubmit={this.handleFormSubmit}>
-        <h1>{this.props.title}</h1>
+        <h3>{this.props.title}</h3>
 
         <div className="input-group">
-          <label>Date of portfolio:</label>
+          <label>Date of purchase:</label>
           <input type="date" required
             value={this.state.portfolio.date}
             onChange={this.handleDateChange}></input>
         </div>
 
         <div className="input-group">
-          <label>Currency sighted:</label>
+          <label>Currency:</label>
           <input type="text" required
             value={this.state.portfolio.currency}
             onChange={this.handleCurrencyChange}></input>
         </div>
 
         <div className="input-group">
-          <label>Ammount of portfolio:</label>
+          <label>Ammount:</label>
           <input type="text" required
             value={this.state.portfolio.ammount}
             onChange={this.handleAmmountChange}></input>

@@ -5,6 +5,7 @@ import CryptoDetail from '../components/info/CryptoDetail'
 import SummaryChart from '../components/info/SummaryChart'
 import HistoricChart from '../components/info/HistoricChart'
 import DetailContainer from './DetailContainer'
+import PortfolioContainer from './PortfolioContainer'
 
 
 class TopContainer extends Component {
@@ -39,6 +40,7 @@ class TopContainer extends Component {
         <CurrencySelector cryptos={this.state.cryptos} onCurrencySelected={ this.handleCurrencySelected }/>
         <SummaryChart cryptos={ this.state.cryptos }/>
         <DetailContainer currency={ this.state.currentCurrency } />
+        <PortfolioContainer />
       </div>
     )
   }

@@ -1,16 +1,16 @@
 import React from 'react';
-import Portfolio from './Portfolio';
-import './PortfoliosList.css';
+import PortfolioItem from './PortfolioItem';
+
 
 const FolioList = ({ portfolio, onPortfolioDelete, onPortfolioSelect }) => {
 
-  const portfolioNodes = portfolios
+  const portfolioNodes = portfolio
     .map(portfolio => (
-      <Portfolio
+      <PortfolioItem
         key={portfolio._id}
         portfolio={portfolio}
         onPortfolioDelete={onPortfolioDelete}
-        onPortfolioSelect={onPortfolioSelect}></Portfolio>
+        onPortfolioSelect={onPortfolioSelect}></PortfolioItem>
     ));
 
   return (
