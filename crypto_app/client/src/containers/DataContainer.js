@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CurrencyList from '../components/CurrencyList'
+// import CurrencyList from '../components/CurrencyList'
 import CurrencySelector from '../components/CurrencySelector'
 import CryptoDetail from '../components/CryptoDetail'
 import SummaryChart from '../components/SummaryChart'

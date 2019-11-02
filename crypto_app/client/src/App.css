@@ -2,10 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
 .main {
   background-color: lightseagreen;
   min-height: 100vh;
@@ -19,4 +15,11 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.details{
+  background-color: white;
+  font-size:1em;
+  Padding:10px;
+  text-align: center;
 }

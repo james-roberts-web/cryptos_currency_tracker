@@ -6,6 +6,7 @@ const SummaryChart = (props) => {
 
   const options = {
     title: "Top 10 Cryptocurrencies",
+    width:1000,
     hAxis: { title: "CryptoCurrency"},
     vAxis: { title: "Percent Change This Hour" },
     legend: "none",
