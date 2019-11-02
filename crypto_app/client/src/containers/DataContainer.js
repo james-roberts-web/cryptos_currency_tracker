@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import CurrencyList from '../components/CurrencyList'
+import CurrencySelector from '../components/CurrencySelector'
 
 class DataContainer extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      cryptos: []
+      cryptos: [],
+      currentCurrency:null
     };
   }
 
@@ -21,6 +23,7 @@ class DataContainer extends Component {
     return(
       <div>
         <CurrencyList cryptos={this.state.cryptos}></CurrencyList>
+        <CurrencySelector cryptos={this.state.cryptos}/>
       </div>
     )
   }
