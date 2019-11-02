@@ -10,7 +10,10 @@ class DataContainer extends Component {
       cryptos: [],
       currentCurrency:null
     };
+    this.handleCurrencySelected = this.handleCurrencySelected.bind(this);
   }
+
+
 
   componentDidMount() {
     fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d')
@@ -19,11 +22,16 @@ class DataContainer extends Component {
     .catch(err => console.error(err));
   }
 
+  handleCurrencySelected(name) {
+    const selectedCurrency = this.state.cryptos.find(currency => currency.name === name );
+    this.setState({ currentCurrency: selectedCurrency });
+  }
+
   render() {
     return(
       <div>
+        <CurrencySelector cryptos={this.state.cryptos} onCurrencySelected={ this.handleCurrencySelected }/>
         <CurrencyList cryptos={this.state.cryptos}></CurrencyList>
-        <CurrencySelector cryptos={this.state.cryptos}/>
       </div>
     )
   }

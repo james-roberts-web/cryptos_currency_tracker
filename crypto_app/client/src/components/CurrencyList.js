@@ -3,11 +3,11 @@ import Currency from './Currency'
 
 const CurrencyList = (props) => {
 
-  const currencyNodes = props.cryptos.map((currency, index) => {
+  const currencyNodes = props.cryptos.map((currency) => {
     return(
       <Currency
         name= { currency.name }
-        key={ index }>
+        key={ currency.symbol }>
       </Currency>
     )
   })

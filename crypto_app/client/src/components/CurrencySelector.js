@@ -2,7 +2,7 @@ import React from 'react';
 
 const CurrencySelector = (props) => {
 
-  const currencyNodes = props.cryptos.map((currency) => {
+  const currencyNodes = props.cryptos.map((currency, index) => {
     return(
       <option
         name= { currency.name }
