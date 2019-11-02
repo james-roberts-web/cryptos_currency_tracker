@@ -3,27 +3,18 @@ import { Chart } from "react-google-charts";
 
 const SummaryChart = (props) => {
 
-
   const options = {
     title: "Top 10 Cryptocurrencies",
-    width:1000,
     hAxis: { title: "CryptoCurrency"},
     vAxis: { title: "Percent Change This Hour" },
-    legend: "none",
-    columnchart: {
-      negativeColor: { strokeWidth: 0, fill: '#a52714' }, // red
-      positiveColor: { strokeWidth: 0, fill: '#0f9d58' }, // green
-    },
+    width:1000,
+    legend: "none"
   };
 
-    const data = props.cryptos.slice(0,10).map((coin) => {
-      return [coin.name, coin.price_change_percentage_1h_in_currency]
-    })
-    data.unshift(['Name', 'change%']);
-
-
-
-
+  const data = props.cryptos.slice(0,10).map((coin) => {
+    return [coin.name, coin.price_change_percentage_1h_in_currency]
+  })
+  data.unshift(['Name', 'change%']);
 
   const SummaryChart = () => {
     return (
@@ -31,7 +22,7 @@ const SummaryChart = (props) => {
       chartType="ColumnChart"
       data={data}
       options={options}
-      width="80%"
+      width="100%"
       height="400px"
       legendToggle
       />

@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import CurrencySelector from '../components/CurrencySelector'
 import CryptoDetail from '../components/CryptoDetail'
 import SummaryChart from '../components/SummaryChart'
+import HistoricChart from '../components/HistoricChart'
+import DetailContainer from './DetailContainer'
 
 
 class DataContainer extends Component {
@@ -33,10 +35,10 @@ class DataContainer extends Component {
   render() {
     return(
       <div className="main">
-      <h1> my Cryptos App</h1>
+        <h1> my Cryptos App</h1>
         <CurrencySelector cryptos={this.state.cryptos} onCurrencySelected={ this.handleCurrencySelected }/>
-        <CryptoDetail currency={ this.state.currentCurrency } />
         <SummaryChart cryptos={ this.state.cryptos }/>
+        <DetailContainer currency={ this.state.currentCurrency } />
       </div>
     )
   }
