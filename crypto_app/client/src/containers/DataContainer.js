@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CurrencyList from '../components/CurrencyList'
 import CurrencySelector from '../components/CurrencySelector'
+import CryptoDetail from '../components/CryptoDetail'
 
 class DataContainer extends Component {
 
@@ -30,8 +31,9 @@ class DataContainer extends Component {
   render() {
     return(
       <div>
+      <h1> my Cryptos App</h1>
         <CurrencySelector cryptos={this.state.cryptos} onCurrencySelected={ this.handleCurrencySelected }/>
-        <CurrencyList cryptos={this.state.cryptos}></CurrencyList>
+        <CryptoDetail currency={ this.state.currentCurrency } />
       </div>
     )
   }
