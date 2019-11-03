@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
 // import CurrencyList from '../components/CurrencyList'
 import CurrencySelector from '../components/info/CurrencySelector'
-import CryptoDetail from '../components/info/CryptoDetail'
 import SummaryChart from '../components/info/SummaryChart'
-import HistoricChart from '../components/info/HistoricChart'
 import DetailContainer from './DetailContainer'
 import PortfolioContainer from './PortfolioContainer'
-import NavBar from "../components/NavBar";
-import ErrorPage from "../components/ErrorPage";
-
-
 
 class TopContainer extends Component {
 
@@ -36,6 +30,7 @@ class TopContainer extends Component {
 
   render() {
     return(
+
       <div className="main">
         <h1> my Cryptos App</h1>
         <CurrencySelector cryptos={this.state.cryptos} onCurrencySelected={ this.handleCurrencySelected }/>
