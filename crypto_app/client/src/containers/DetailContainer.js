@@ -40,7 +40,7 @@ class DetailContainer extends Component {
         <div className="detail">
         <h1></h1>
         <CryptoDetail currency={this.props.currency}/>
-        <HistoricChart prices={this.state.historicData} />
+        <HistoricChart currency={this.props.currency} historicData={this.state.historicData} />
         </div>
       )
     }

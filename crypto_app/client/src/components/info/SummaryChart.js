@@ -32,7 +32,7 @@ const SummaryChart = (props) => {
 
 
   return(
-    <div>
+    <div >
     <SummaryChart />
     </div>
   )

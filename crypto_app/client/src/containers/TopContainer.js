@@ -6,6 +6,9 @@ import SummaryChart from '../components/info/SummaryChart'
 import HistoricChart from '../components/info/HistoricChart'
 import DetailContainer from './DetailContainer'
 import PortfolioContainer from './PortfolioContainer'
+import NavBar from "../components/NavBar";
+import ErrorPage from "../components/ErrorPage";
+
 
 
 class TopContainer extends Component {
@@ -18,8 +21,6 @@ class TopContainer extends Component {
     };
     this.handleCurrencySelected = this.handleCurrencySelected.bind(this);
   }
-
-
 
   componentDidMount() {
     fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d')

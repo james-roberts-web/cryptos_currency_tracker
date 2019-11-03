@@ -17,10 +17,12 @@ const CurrencySelector = (props) => {
   }
 
   return (
+    <div className="selector">
     <select id="currency-selector" defaultValue="default" onChange={ handleChange }>
       <option disabled value="default">Select a Currency...</option>
       { currencyNodes }
     </select>
+    </div>
   );
 }
 export default CurrencySelector;

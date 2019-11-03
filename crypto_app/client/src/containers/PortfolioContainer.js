@@ -44,6 +44,11 @@ class PortfolioContainer extends Component {
       .then(portfolio => this.setState({ portfolio, editPortfolio: null }));
   }
 
+  handleCurrencySelected(name) {
+    const selectedCurrency = this.state.cryptos.find(currency => currency.name === name );
+    this.setState({ currentCurrency: selectedCurrency });
+  }
+
   render() {
     const editForm = this.state.editPortfolio ?
       <FolioForm
@@ -58,9 +63,6 @@ class PortfolioContainer extends Component {
           onPortfolioSelect={this.handleSelectPortfolio}
           onPortfolioDelete={this.handleDeletePortfolio}
           portfolio={this.state.portfolio}></FolioList>
-
-        {editForm}
-
         <FolioForm
           title="Add New Crypto Purchase"
           onPortfolioSubmit={this.handleNewPortfolio}></FolioForm>
