@@ -18,8 +18,6 @@ class DetailContainer extends Component {
       },
     };
   }
-    };
-  }
 
   getUrlCurrency() {
     const currencyName = this.props.match.params.currency;
@@ -29,19 +27,20 @@ class DetailContainer extends Component {
       return currency.name.toLowerCase() === currencyName.toLowerCase();
     });
 
-    fetch(`https://api.coingecko.com/api/v3/coins/${currencyName.toLowerCase()}/market_chart/range?vs_currency=gbp&from=1572703373&to=1572713373`)
-    .then(res => res.json(res))
-    .then(data => this.setState({
-      historicData: {
-        marketCaps: data.market_caps,
-        totalVolumes: data.total_volumes,
-        prices: data.prices
-      }
-    }))
+    if(!selectedCurrency) return;
 
+    fetch(`https://api.coingecko.com/api/v3/coins/${selectedCurrency.id}/market_chart/range?vs_currency=gbp&from=1572703373&to=1572713373`)
+      .then(res => res.json(res))
+      .then(data => this.setState({
+        historicData: {
+          marketCaps: data.market_caps,
+          totalVolumes: data.total_volumes,
+          prices: data.prices
+        }
+      }))
     .catch(err => console.error(err));
-
     this.setState({ currency: selectedCurrency });
+    console.log(currencyName)
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -53,20 +52,6 @@ class DetailContainer extends Component {
     this.getUrlCurrency();
   }
 
-  // componentDidMount() {
-  //   fetch("https://hacker-news.firebaseio.com/v0/topstories.json")
-  //   .then(res => res.json())
-  //   .then(data => {
-  //     const topTen = data.slice(0, 10);
-  //     const storyPromises = topTen.map(storyId => {
-  //       return fetch(`https://hacker-news.firebaseio.com/v0/item/${storyId}.json`)
-  //         .then(res => res.json())
-  //       });
-  //       Promise.all(storyPromises).then(stories => this.setState({stories:stories}))
-  //     })
-  //     .catch(console.error);
-  //   }
-  //
 
   render() {
     if (!this.state.currency) return null;

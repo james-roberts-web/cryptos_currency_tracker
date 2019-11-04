@@ -8,7 +8,7 @@ const CurrencySelector = (props) => {
     return(
       <option
         value={ currency.name }
-        key={ currency.id }>
+        key={ currency.symbol }>
         {currency.name}
       </option>
     );

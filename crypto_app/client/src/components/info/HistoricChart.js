@@ -29,9 +29,10 @@ const HistoricChart = (props) => {
   };
 
   const chartPriceData = [['Date', 'Price'], ...props.historicData.prices];
-  const chartMCapData =[['Date', 'Cap'], ...props.historicData.marketCaps];
-  const chartVolumeData =[['Date', 'Volume'], ...props.historicData.totalVolumes];
 
+  const chartMCapData =[['Date', 'Cap'], ...props.historicData.marketCaps];
+
+  const chartVolumeData =[['Date', 'Volume'], ...props.historicData.totalVolumes];
 
   const PriceChart = () => {
     return (
@@ -71,6 +72,7 @@ const HistoricChart = (props) => {
       />
     );
   };
+
   if (!props.currency) return null;
   return(
     <div className="smallChart">
