@@ -33,7 +33,6 @@ const HistoricChart = (props) => {
   const chartVolumeData =[['Date', 'Volume'], ...props.historicData.totalVolumes];
 
 
-
   const PriceChart = () => {
     return (
       <Chart

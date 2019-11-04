@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CryptoDetail from '../components/info/CryptoDetail'
 import HistoricChart from '../components/info/HistoricChart'
+import CurrencySelector from '../components/info/CurrencySelector'
 
 
 class DetailContainer extends Component {
@@ -12,12 +13,13 @@ class DetailContainer extends Component {
         marketCaps: [],
         totalVolumes: []
       },
-      currency: this.props.currency
+      currency: props.currency
     };
   }
 
+
   componentDidMount() {
-    fetch('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=gbp&from=1572703373&to=1572713373')
+    fetch(`https://api.coingecko.com/api/v3/coins/litecoin/market_chart/range?vs_currency=gbp&from=1572703373&to=1572713373`)
     .then(res => res.json(res))
     .then(data => this.setState({
       historicData: {
@@ -49,7 +51,6 @@ class DetailContainer extends Component {
       return(
 
         <div className="detail">
-        <h1></h1>
         <CryptoDetail currency={this.props.currency}/>
         <HistoricChart currency={this.props.currency} historicData={this.state.historicData} />
         </div>
