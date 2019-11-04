@@ -7,19 +7,29 @@ import CurrencySelector from '../components/info/CurrencySelector'
 class DetailContainer extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
+      // currencyName: currency || null,
+      currency: null,
       historicData: {
         prices: [],
         marketCaps: [],
         totalVolumes: []
       },
-      currency: props.currency
+    };
+  }
     };
   }
 
+  getUrlCurrency() {
+    const currencyName = this.props.match.params.currency;
 
-  componentDidMount() {
-    fetch(`https://api.coingecko.com/api/v3/coins/litecoin/market_chart/range?vs_currency=gbp&from=1572703373&to=1572713373`)
+    const selectedCurrency = this.props.cryptos
+    .find(currency => {
+      return currency.name.toLowerCase() === currencyName.toLowerCase();
+    });
+
+    fetch(`https://api.coingecko.com/api/v3/coins/${currencyName.toLowerCase()}/market_chart/range?vs_currency=gbp&from=1572703373&to=1572713373`)
     .then(res => res.json(res))
     .then(data => this.setState({
       historicData: {
@@ -30,6 +40,17 @@ class DetailContainer extends Component {
     }))
 
     .catch(err => console.error(err));
+
+    this.setState({ currency: selectedCurrency });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps === this.props) return;
+    this.getUrlCurrency();
+  }
+
+  componentDidMount() {
+    this.getUrlCurrency();
   }
 
   // componentDidMount() {
@@ -47,15 +68,16 @@ class DetailContainer extends Component {
   //   }
   //
 
-    render() {
-      return(
+  render() {
+    if (!this.state.currency) return null;
+    return(
+      <div className="detail">
+      <h1>{ this.state.currency.name }</h1>
+      <CryptoDetail currency={this.state.currency}/>
+      <HistoricChart currency={this.state.currency.name} historicData={this.state.historicData} />
+      </div>
+    )
+  }
+};
 
-        <div className="detail">
-        <CryptoDetail currency={this.props.currency}/>
-        <HistoricChart currency={this.props.currency} historicData={this.state.historicData} />
-        </div>
-      )
-    }
-  };
-
-  export default DetailContainer;
+export default DetailContainer;
