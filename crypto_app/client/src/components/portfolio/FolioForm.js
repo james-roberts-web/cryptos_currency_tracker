@@ -23,8 +23,8 @@ class PortfolioForm extends Component {
   handleDateChange(event) {
     this.setState({ portfolio: { ...this.state.portfolio, date: event.target.value } });
   }
-  handleCurrencyChange(event) {
-    this.setState({ portfolio: { ...this.state.portfolio, currency: event.target.value } });
+  handleCurrencyChange(currency_id) {
+    this.setState({ portfolio: { ...this.state.portfolio, currency: currency_id } });
   }
   handleAmountChange(event) {
     this.setState({ portfolio: { ...this.state.portfolio, amount: event.target.value } });
