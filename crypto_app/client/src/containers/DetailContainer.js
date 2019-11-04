@@ -35,10 +35,10 @@ class DetailContainer extends Component {
   //
 
     render() {
+      if (!this.props.currency) return null;
       return(
-
         <div className="detail">
-        <h1></h1>
+        <h1>Detail Container</h1>
         <CryptoDetail currency={this.props.currency}/>
         <HistoricChart currency={this.props.currency} historicData={this.state.historicData} />
         </div>
