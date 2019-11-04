@@ -9,7 +9,6 @@ class DetailContainer extends Component {
     super(props);
 
     this.state = {
-      // currencyName: currency || null,
       currency: null,
       historicData: {
         prices: [],
@@ -29,7 +28,7 @@ class DetailContainer extends Component {
 
     if(!selectedCurrency) return;
 
-    fetch(`https://api.coingecko.com/api/v3/coins/${selectedCurrency.id}/market_chart/range?vs_currency=gbp&from=1572703373&to=1572713373`)
+    fetch(`https://api.coingecko.com/api/v3/coins/${selectedCurrency.id}/market_chart?vs_currency=gbp&days=30`)
       .then(res => res.json(res))
       .then(data => this.setState({
         historicData: {
@@ -51,7 +50,6 @@ class DetailContainer extends Component {
   componentDidMount() {
     this.getUrlCurrency();
   }
-
 
   render() {
     if (!this.state.currency) return null;
