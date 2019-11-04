@@ -20,9 +20,20 @@
   background-color: white;
   font-size:1em;
   Padding:20px;
+  border-style: solid;
+}
+
+ img{
   text-align: center;
 }
 
+table, th, td {
+  border: 1px solid lightgrey;
+  border-collapse: collapse;
+}
+table{
+  border-style:solid;
+}
 .selector{
   margin:20px;
 }
