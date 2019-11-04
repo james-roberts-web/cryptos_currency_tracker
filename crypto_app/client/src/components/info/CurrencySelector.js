@@ -1,19 +1,21 @@
+import { Route, useHistory } from 'react-router-dom';
 import React from 'react';
 
 const CurrencySelector = (props) => {
+  let history = useHistory();
 
   const currencyNodes = props.cryptos.map((currency, index) => {
     return(
       <option
-        name= { currency.name }
-        key={ currency.id }>
+        value={ currency.name }
+        key={ currency.symbol }>
         {currency.name}
       </option>
     );
   });
 
   function handleChange(event) {
-    props.onCurrencySelected(event.target.value);
+    history.push(`/currencies/${event.target.value}`);
   }
 
   return (

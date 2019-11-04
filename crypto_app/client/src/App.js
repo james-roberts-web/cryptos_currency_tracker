@@ -2,7 +2,7 @@
 import React from 'react';
 import TopContainer from './containers/TopContainer'
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import DetailContainer from './containers/DetailContainer'
 import PortfolioContainer from './containers/PortfolioContainer'
 import NavBar from "./components/NavBar";
@@ -13,16 +13,13 @@ function App() {
   return (
     <Router>
       <div>
-
-
+        <NavBar />
         <Switch>
-          <Route exact path="/" component={ TopContainer } />
-          <Route path="/details" component={ DetailContainer } />
-          <Route path="/portfolio" render={ PortfolioContainer }/>
+          <Route exact path="/" render={() => <Redirect to="/currencies" />} />
+          <Route path="/currencies" component={ TopContainer } />
+          <Route path="/portfolio" component={ PortfolioContainer }/>
           <Route component={ ErrorPage } />
         </Switch>
-
-        <NavBar />
       </div>
     </Router>
 
@@ -31,3 +28,7 @@ function App() {
 
 
 export default App;
+
+// <Route exact path="/">
+//   <Redirect to="/currencies" />
+// </Route>
