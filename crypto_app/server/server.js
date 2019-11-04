@@ -16,6 +16,6 @@ MongoClient.connect('mongodb://localhost:27017')
     app.use('/api', userRouter);
   })
   .catch(console.err);
-app.listen(3000, function () {
+app.listen(3001, function () {
   console.log(`Listening on port ${this.address().port}`);
 });
