@@ -5,7 +5,7 @@ const PortfolioItem = ({ portfolio, onPortfolioDelete, onPortfolioSelect }) => {
     <div className="portfolio">
       <h3>{portfolio.date}</h3>
       <p>{portfolio.currency}</p>
-      <p>{portfolio.ammount}</p>
+      <p>{portfolio.amount}</p>
       <button onClick={() => onPortfolioDelete(portfolio._id)}>Delete</button>
       <button onClick={() => onPortfolioSelect(portfolio)}>Edit</button>
     </div>

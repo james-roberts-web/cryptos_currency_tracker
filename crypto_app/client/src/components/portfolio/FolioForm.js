@@ -5,12 +5,12 @@ class PortfolioForm extends Component {
     super(props);
 
     this.state = {
-      portfolio: this.props.portfolio || { date: "", currency: "", ammount: "" }
+      portfolio: this.props.portfolio || { date: "", currency: "", amount: "" }
     };
 
     this.handleDateChange = this.handleDateChange.bind(this);
     this.handleCurrencyChange = this.handleCurrencyChange.bind(this);
-    this.handleAmmountChange = this.handleAmmountChange.bind(this);
+    this.handleAmountChange = this.handleAmountChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
@@ -25,8 +25,8 @@ class PortfolioForm extends Component {
   handleCurrencyChange(event) {
     this.setState({ portfolio: { ...this.state.portfolio, currency: event.target.value } });
   }
-  handleAmmountChange(event) {
-    this.setState({ portfolio: { ...this.state.portfolio, ammount: event.target.value } });
+  handleAmountChange(event) {
+    this.setState({ portfolio: { ...this.state.portfolio, amount: event.target.value } });
   }
 
   handleFormSubmit(event) {
@@ -36,7 +36,7 @@ class PortfolioForm extends Component {
       portfolio: {
         date: "",
         currency: "",
-        ammount: ""
+        amount: ""
       }
     });
   }
@@ -61,10 +61,10 @@ class PortfolioForm extends Component {
         </div>
 
         <div className="input-group">
-          <label>Ammount:</label>
+          <label>Amount:</label>
           <input type="text" required
-            value={this.state.portfolio.ammount}
-            onChange={this.handleAmmountChange}></input>
+            value={this.state.portfolio.amount}
+            onChange={this.handleAmountChange}></input>
         </div>
 
         <div className="input-group">
