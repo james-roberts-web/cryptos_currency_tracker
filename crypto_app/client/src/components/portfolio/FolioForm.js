@@ -55,7 +55,7 @@ class PortfolioForm extends Component {
         </div>
 
         <div className="input-group">
-          <label>Currency</label>
+          <label>Currency:</label>
           <FolioSelector
           cryptos={this.props.cryptos}
           currencyChange={this.handleCurrencyChange}/>
