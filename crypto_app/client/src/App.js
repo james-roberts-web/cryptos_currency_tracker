@@ -13,16 +13,13 @@ function App() {
   return (
     <Router>
       <div>
-
-
+        <NavBar />
         <Switch>
           <Route exact path="/" component={ TopContainer } />
           <Route path="/details" component={ DetailContainer } />
-          <Route path="/portfolio" render={ PortfolioContainer }/>
+          <Route path="/portfolio" component={ PortfolioContainer }/>
           <Route component={ ErrorPage } />
         </Switch>
-
-        <NavBar />
       </div>
     </Router>
 

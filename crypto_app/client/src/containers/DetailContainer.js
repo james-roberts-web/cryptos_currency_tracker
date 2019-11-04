@@ -38,7 +38,7 @@ class DetailContainer extends Component {
       return(
 
         <div className="detail">
-        <h1></h1>
+        <h1>Detail Component</h1>
         <CryptoDetail currency={this.props.currency}/>
         <HistoricChart currency={this.props.currency} historicData={this.state.historicData} />
         </div>
