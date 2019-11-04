@@ -36,7 +36,6 @@ class TopContainer extends Component {
         <CurrencySelector cryptos={this.state.cryptos} onCurrencySelected={ this.handleCurrencySelected }/>
         <SummaryChart cryptos={ this.state.cryptos }/>
         <DetailContainer currency={ this.state.currentCurrency } />
-        <PortfolioContainer />
       </div>
     )
   }
