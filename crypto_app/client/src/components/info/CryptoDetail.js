@@ -1,9 +1,15 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons'
+
+
 
 const CryptoDetail = (props) => {
   if (!props.currency) return null;
+  const arrowIndicator = (props.currency.price_change_percentage_1h_in_currency > 0) ? <FontAwesomeIcon icon={faArrowUp} /> : <FontAwesomeIcon icon={faArrowDown} />
   return (
     <div className="details">
+    { arrowIndicator }
     <img src={props.currency.image} alt = "currency logo"></img>
       <h3>{ props.currency.name } </h3>
       <h4>{props.currency.symbol}</h4>
