@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FolioSelector from '../portfolio/FolioSelector'
 
 class PortfolioForm extends Component {
   constructor(props) {
@@ -22,8 +23,8 @@ class PortfolioForm extends Component {
   handleDateChange(event) {
     this.setState({ portfolio: { ...this.state.portfolio, date: event.target.value } });
   }
-  handleCurrencyChange(event) {
-    this.setState({ portfolio: { ...this.state.portfolio, currency: event.target.value } });
+  handleCurrencyChange(currency_id) {
+    this.setState({ portfolio: { ...this.state.portfolio, currency: currency_id } });
   }
   handleAmountChange(event) {
     this.setState({ portfolio: { ...this.state.portfolio, amount: event.target.value } });
@@ -55,9 +56,9 @@ class PortfolioForm extends Component {
 
         <div className="input-group">
           <label>Currency:</label>
-          <input type="text" required
-            value={this.state.portfolio.currency}
-            onChange={this.handleCurrencyChange}></input>
+          <FolioSelector
+          cryptos={this.props.cryptos}
+          currencyChange={this.handleCurrencyChange}/>
         </div>
 
         <div className="input-group">

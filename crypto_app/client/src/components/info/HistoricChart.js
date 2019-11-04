@@ -29,7 +29,7 @@ const HistoricChart = (props) => {
   };
 
   const chartPriceData = [['Date', 'Price'], ...props.historicData.prices];
-
+  
   const chartMCapData =[['Date', 'Cap'], ...props.historicData.marketCaps];
 
   const chartVolumeData =[['Date', 'Volume'], ...props.historicData.totalVolumes];
