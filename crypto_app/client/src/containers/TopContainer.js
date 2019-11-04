@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, { Component, Fragment } from 'react';
 // import CurrencyList from '../components/CurrencyList'
 import CurrencySelector from '../components/info/CurrencySelector'
 import SummaryChart from '../components/info/SummaryChart'
@@ -24,20 +25,25 @@ class TopContainer extends Component {
   }
 
   handleCurrencySelected(name) {
-    const selectedCurrency = this.state.cryptos.find(currency => currency.name === name );
-    this.setState({ currentCurrency: selectedCurrency });
+    // const selectedCurrency = this.state.cryptos.find(currency => currency.name === name );
+    // this.setState({ currentCurrency: selectedCurrency });
   }
 
   render() {
-    return(
-
+    return (
       <div className="main">
-        <h1> my Cryptos App</h1>
+        <h1>My Cryptos App</h1>
         <CurrencySelector cryptos={this.state.cryptos} onCurrencySelected={ this.handleCurrencySelected }/>
-        <SummaryChart cryptos={ this.state.cryptos }/>
-        <DetailContainer currency={ this.state.currentCurrency } />
+
+        <Route
+          exact path={`${this.props.match.path}`}
+          render={() => (<SummaryChart cryptos={ this.state.cryptos }/>)} />
+          
+        <Route
+          path={`${this.props.match.path}/:currency`}
+          render={({match}) => (<DetailContainer match={match} cryptos={ this.state.cryptos } />)} />
       </div>
-    )
+    );
   }
 };
 
