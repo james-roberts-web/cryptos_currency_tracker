@@ -8,6 +8,7 @@ class PortfolioContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      cryptos: [],
       portfolio: [],
       editPortfolio: null
     };
@@ -16,6 +17,13 @@ class PortfolioContainer extends Component {
     this.handleDeletePortfolio = this.handleDeletePortfolio.bind(this);
     this.handleSelectPortfolio = this.handleSelectPortfolio.bind(this);
     this.handleEditPortfolio = this.handleEditPortfolio.bind(this);
+  }
+
+  componentDidMount() {
+    fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d')
+    .then(res => res.json(res))
+    .then(cryptos => this.setState({cryptos}))
+    .catch(err => console.error(err));
   }
 
   // componentDidMount() {
@@ -52,6 +60,7 @@ class PortfolioContainer extends Component {
   render() {
     const editForm = this.state.editPortfolio ?
       <FolioForm
+        crytos={this.state.cryptos}
         title="Edit Portfolio"
         portfolio={this.state.editPortfolio}
         onPortfolioSubmit={this.handleEditPortfolio}></FolioForm> : null;
@@ -60,10 +69,12 @@ class PortfolioContainer extends Component {
       <div id="portfolioContainer">
         <h1>Portfolio</h1>
         <FolioList
+          cryptos={this.state.cryptos}
           onPortfolioSelect={this.handleSelectPortfolio}
           onPortfolioDelete={this.handleDeletePortfolio}
           portfolio={this.state.portfolio}></FolioList>
         <FolioForm
+          cryptos={this.state.cryptos}
           title="Add New Crypto Purchase"
           onPortfolioSubmit={this.handleNewPortfolio}></FolioForm>
       </div>

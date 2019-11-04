@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FolioSelector from '../portfolio/FolioSelector'
 
 class PortfolioForm extends Component {
   constructor(props) {
@@ -54,10 +55,10 @@ class PortfolioForm extends Component {
         </div>
 
         <div className="input-group">
-          <label>Currency:</label>
-          <input type="text" required
-            value={this.state.portfolio.currency}
-            onChange={this.handleCurrencyChange}></input>
+          <label>Currency</label>
+          <FolioSelector
+          cryptos={this.props.cryptos}
+          currencyChange={this.handleCurrencyChange}/>
         </div>
 
         <div className="input-group">
