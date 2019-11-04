@@ -7,15 +7,26 @@ class DetailContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      historicData: [],
-      currency:this.props.currency
+      historicData: {
+        prices: [],
+        marketCaps: [],
+        totalVolumes: []
+      },
+      currency: this.props.currency
     };
   }
 
   componentDidMount() {
     fetch('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=gbp&from=1572703373&to=1572713373')
     .then(res => res.json(res))
-    .then(historicData => this.setState({historicData}))
+    .then(data => this.setState({
+      historicData: {
+        marketCaps: data.market_caps,
+        totalVolumes: data.total_volumes,
+        prices: data.prices
+      }
+    }))
+
     .catch(err => console.error(err));
   }
 

@@ -28,24 +28,17 @@ const HistoricChart = (props) => {
     legend: "none"
   };
 
+  const chartPriceData = [['Date', 'Price'], ...props.historicData.prices];
+  const chartMCapData =[['Date', 'Cap'], ...props.historicData.marketCaps];
+  const chartVolumeData =[['Date', 'Volume'], ...props.historicData.totalVolumes];
 
-  // const priceData = props.historicData.map((item) => {
-  //   return [item]
-  // })
-  // priceData.unshift(['Date', 'price']);
-
- const priceData = [['date','cap'],[56546,3456],[34563,3456],[9,345]]
-
-  const mCapData = [['date','cap'],[56546,3456],[34563,3456],[1,9999]]
-
-  const volumeData = [['date','volume'],[56546,3456],[34563,3456],[100,23]]
 
 
   const PriceChart = () => {
     return (
       <Chart
       chartType="LineChart"
-      data={priceData}
+      data={chartPriceData}
       options={priceOptions}
       width="25%"
       height="150px"
@@ -58,7 +51,7 @@ const HistoricChart = (props) => {
     return (
       <Chart
       chartType="LineChart"
-      data={mCapData}
+      data={chartMCapData}
       options={mCapOptions}
       width="25%"
       height="150px"
@@ -71,7 +64,7 @@ const HistoricChart = (props) => {
     return (
       <Chart
       chartType="LineChart"
-      data={volumeData}
+      data={chartVolumeData}
       options={volumeOptions}
       width="25%"
       height="150px"
