@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PortfolioItem from '../components/portfolio/PortfolioItem';
 import FolioList from '../components/portfolio/FolioList';
 import FolioForm from '../components/portfolio/FolioForm';
+import FolioTotal from '../components/portfolio/FolioTotal'
 import '../components/portfolio/portfolio.css'
 
 class PortfolioContainer extends Component {
@@ -82,10 +83,14 @@ class PortfolioContainer extends Component {
           onPortfolioSelect={this.handleSelectPortfolio}
           onPortfolioDelete={this.handleDeletePortfolio}
           portfolio={this.state.cathFolio}></FolioList>
+
+        <FolioTotal cryptos = {this.state.cryptos} portfolio={this.state.cathFolio}></FolioTotal>
+
         <FolioForm
           cryptos={this.state.cryptos}
           title="Add New Crypto Purchase"
           onPortfolioSubmit={this.handleNewPortfolio}></FolioForm>
+        
       </div>
     );
   }

@@ -9,7 +9,8 @@ const FolioList = ({ portfolio, onPortfolioDelete, onPortfolioSelect }) => {
         key={portfolio._id}
         portfolio={portfolio}
         onPortfolioDelete={onPortfolioDelete}
-        onPortfolioSelect={onPortfolioSelect}></PortfolioItem>
+        onPortfolioSelect={onPortfolioSelect}
+        ></PortfolioItem>
     ));
 
   return (
