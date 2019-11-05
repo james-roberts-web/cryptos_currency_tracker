@@ -4,8 +4,7 @@ import PortfolioItem from './PortfolioItem';
 
 const FolioList = ({ portfolio, onPortfolioDelete, onPortfolioSelect }) => {
 
-  const portfolioNodes = portfolio
-    .map(portfolio => (
+  const portfolioNodes = portfolio.map(portfolio => (
       <PortfolioItem
         key={portfolio._id}
         portfolio={portfolio}

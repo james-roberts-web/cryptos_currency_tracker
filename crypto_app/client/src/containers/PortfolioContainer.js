@@ -10,6 +10,14 @@ class PortfolioContainer extends Component {
     this.state = {
       cryptos: [],
       portfolio: [],
+      cathFolio:[
+        {date:null,
+        currency:"bitcoin",
+        amount:2},
+        {date:null,
+        currency:"etherium",
+        amount:100}
+      ],
       editPortfolio: null
     };
 
@@ -72,7 +80,7 @@ class PortfolioContainer extends Component {
           cryptos={this.state.cryptos}
           onPortfolioSelect={this.handleSelectPortfolio}
           onPortfolioDelete={this.handleDeletePortfolio}
-          portfolio={this.state.portfolio}></FolioList>
+          portfolio={this.state.cathFolio}></FolioList>
         <FolioForm
           cryptos={this.state.cryptos}
           title="Add New Crypto Purchase"

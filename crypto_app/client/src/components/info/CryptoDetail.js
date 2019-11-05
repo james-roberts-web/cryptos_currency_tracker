@@ -14,6 +14,7 @@ const CryptoDetail = (props) => {
       <h3>{ props.currency.name } </h3>
       <h4>{props.currency.symbol}</h4>
       <table>
+        <tbody>
         <tr>
           <td>
             Current Price:
@@ -78,6 +79,7 @@ const CryptoDetail = (props) => {
             £{props.currency.total_volume}
           </td>
         </tr>
+        </tbody>
       </table>
 
     </div>
