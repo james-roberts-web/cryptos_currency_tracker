@@ -30,6 +30,18 @@ class PortfolioItem {
     }).then(res => res.json());
   }
 
+  static deleteCoin(data) {
+    const id = data._id;
+    delete data._id;
+    return fetch(`${this.url}/${id}/buy`, {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ date: data.date, currency: data.currency, amount: data.amount })
+    }).then(res => res.json());
+  }
+
+
+
   static update(portfolio) {
     return fetch(`${this.url}/${portfolio._id}`, {
       method: "PUT",

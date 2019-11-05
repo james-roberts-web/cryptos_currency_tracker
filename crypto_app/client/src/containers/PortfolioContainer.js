@@ -13,14 +13,6 @@ class PortfolioContainer extends Component {
     this.state = {
       cryptos: [],
       portfolio: [],
-      cathFolio:[
-        {date:null,
-        currency:"bitcoin",
-        amount:2},
-        {date:null,
-        currency:"etherium",
-        amount:100}
-      ],
       editPortfolio: null
     };
 
@@ -49,9 +41,13 @@ class PortfolioContainer extends Component {
       }));
   }
 
-  handleDeletePortfolio(id) {
-    PortfolioItem.delete(id)
-      .then(portfolio => this.setState({ portfolio }));
+  handleDeletePortfolio(data) {
+    function coinToDelete(coin) {
+      return coin === this.state.portfolio.wallet.currency.id
+    }
+
+    const sortedCoin = this.state.portfolio.wallet.filter(coinToDelete);
+    console.log(sortedCoin)
   }
 
   handleSelectPortfolio(editPortfolio) {
@@ -87,7 +83,8 @@ class PortfolioContainer extends Component {
           cryptos={this.state.cryptos}
           onPortfolioSelect={this.handleSelectPortfolio}
           onPortfolioDelete={this.handleDeletePortfolio}
-          portfolios={this.state.portfolio.wallet}></FolioList>
+          portfolios={this.state.portfolio.wallet}
+          id={this.state.portfolio._id}></FolioList>
 
 
 

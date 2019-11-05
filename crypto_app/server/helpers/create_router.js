@@ -77,6 +77,27 @@ const createRouter = function (collection) {
       });
   });
 
+  router.post('/:id/delete-coin', (req, res) => {
+    const id = req.params.id;
+    const currencyData = req.body;
+    collection
+      .findOne({ _id: ObjectID(id) })
+      .then(buyer => {
+        buyer.wallet.push(currencyData);
+        delete buyer._id
+
+        collection.findOneAndUpdate(
+          { _id: ObjectID(id) },
+          { $set: buyer },
+          { returnOriginal: false })
+          .then(result => res.json(result.value));
+      })
+      .catch((err) => {
+        res.status(500);
+        res.json({ status: 500, error: err });
+      });
+  });
+
   router.post('/', (req, res) => {
     const newData = req.body;
     collection

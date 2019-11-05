@@ -2,7 +2,7 @@ import React from 'react';
 import PortfolioItem from './PortfolioItem';
 
 
-const FolioList = ({ portfolios, onPortfolioDelete, onPortfolioSelect }) => {
+const FolioList = ({ portfolios, onPortfolioDelete, onPortfolioSelect, id }) => {
 
   if (!portfolios) return null;
 
@@ -12,6 +12,7 @@ const FolioList = ({ portfolios, onPortfolioDelete, onPortfolioSelect }) => {
         portfolio={portfolio}
         onPortfolioDelete={onPortfolioDelete}
         onPortfolioSelect={onPortfolioSelect}
+        id={id}
         ></PortfolioItem>
     ));
 
