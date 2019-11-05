@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PortfolioItem from '../components/portfolio/PortfolioItem';
 import FolioList from '../components/portfolio/FolioList';
 import FolioForm from '../components/portfolio/FolioForm';
+import '../components/portfolio/portfolio.css'
 
 class PortfolioContainer extends Component {
 

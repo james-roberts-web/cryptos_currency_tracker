@@ -1,0 +1,4 @@
+.portfolioList{
+  display:flex;
+  flex-direction: row;
+}

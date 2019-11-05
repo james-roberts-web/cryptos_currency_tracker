@@ -3,11 +3,10 @@ import React from 'react';
 const PortfolioItem = ({ portfolio, onPortfolioDelete, onPortfolioSelect }) => {
   return (
     <div className="portfolio">
-      <p>{portfolio.date}</p>
-      <p>{portfolio.currency}</p>
-      <p>{portfolio.amount}</p>
+      <li>{portfolio.date}  {portfolio.currency}  {portfolio.amount}
       <button onClick={() => onPortfolioDelete(portfolio._id)}>Delete</button>
       <button onClick={() => onPortfolioSelect(portfolio)}>Edit</button>
+      </li>
     </div>
   );
 };
