@@ -1,5 +1,5 @@
 class PortfolioItem {
-  static url = "http://localhost:3001/api/accounts";
+  static url = "http://localhost:3001/api/";
 
   static get() {
     return fetch(this.url)
@@ -29,4 +29,4 @@ class PortfolioItem {
   }
 }
 
-export default Sighting;
+export default PortfolioItem;

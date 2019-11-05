@@ -5,7 +5,7 @@ const FolioSelector = (props) => {
   const currencyNodes = props.cryptos.map((currency, index) => {
     return(
       <option
-        value={ currency.id }
+        value={ currency }
         key={ currency.symbol }>
         {currency.name}
       </option>
