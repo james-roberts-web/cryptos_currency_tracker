@@ -2,11 +2,13 @@ import React from 'react';
 import PortfolioItem from './PortfolioItem';
 
 
-const FolioList = ({ portfolio, onPortfolioDelete, onPortfolioSelect }) => {
+const FolioList = ({ portfolios, onPortfolioDelete, onPortfolioSelect }) => {
 
-  const portfolioNodes = portfolio.map(portfolio => (
+  if (!portfolios) return null;
+
+  const portfolioNodes = portfolios.map((portfolio, index) => (
       <PortfolioItem
-        key={portfolio._id}
+        key={index}
         portfolio={portfolio}
         onPortfolioDelete={onPortfolioDelete}
         onPortfolioSelect={onPortfolioSelect}

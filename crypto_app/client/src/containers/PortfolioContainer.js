@@ -32,9 +32,13 @@ class PortfolioContainer extends Component {
 
   componentDidMount() {
     fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d')
-    .then(res => res.json(res))
-    .then(cryptos => this.setState({cryptos}))
-    .catch(err => console.error(err));
+      .then(res => res.json(res))
+      .then(cryptos => this.setState({cryptos}))
+      .catch(err => console.error(err));
+
+    PortfolioItem.get()
+      .then(portfolio => this.setState({portfolio: portfolio[0]}))
+      .catch(err => console.error(err));
   }
 
   // componentDidMount() {
@@ -70,6 +74,9 @@ class PortfolioContainer extends Component {
   }
 
   render() {
+
+
+
     const editForm = this.state.editPortfolio ?
       <FolioForm
         crytos={this.state.cryptos}
@@ -84,9 +91,9 @@ class PortfolioContainer extends Component {
           cryptos={this.state.cryptos}
           onPortfolioSelect={this.handleSelectPortfolio}
           onPortfolioDelete={this.handleDeletePortfolio}
-          portfolio={this.state.cathFolio}></FolioList>
+          portfolios={this.state.portfolio.wallet}></FolioList>
 
-        <FolioTotal cryptos = {this.state.cryptos} portfolio={this.state.cathFolio}></FolioTotal>
+
 
         <FolioForm
           cryptos={this.state.cryptos}

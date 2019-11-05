@@ -52,7 +52,7 @@ class PortfolioForm extends Component {
 
         <div className="input-group">
           <label>Date of purchase:</label>
-          <input type="date" defaultValue required
+          <input type="date" required
             value={this.state.portfolio.date}
             onChange={this.handleDateChange}></input>
         </div>
@@ -72,7 +72,7 @@ class PortfolioForm extends Component {
         </div>
 
         <div className="input-group">
-          <button type="submit" onSubmit="handleFormSubmit">Submit</button>
+          <button type="submit">Submit</button>
         </div>
 
       </form>
