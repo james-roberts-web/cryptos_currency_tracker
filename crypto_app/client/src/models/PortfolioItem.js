@@ -20,11 +20,13 @@ class PortfolioItem {
     }).then(res => res.json());
   }
 
-  static buyCurrency(id, currency, quantity) {
+  static buyCurrency(data) {
+    const id = data._id;
+    delete data._id;
     return fetch(`${this.url}/${id}/buy`, {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({currency: currency, quantity: quantity})
+      body: JSON.stringify({ date: data.date, currency: data.currency, amount: data.amount })
     }).then(res => res.json());
   }
 

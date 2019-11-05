@@ -41,10 +41,6 @@ class PortfolioContainer extends Component {
       .catch(err => console.error(err));
   }
 
-  // componentDidMount() {
-  //   PortfolioItem.get()
-  //     .then(portfolio => this.setState({ portfolio }));
-  // }
 
   handleNewPortfolio(portfolioData) {
     PortfolioItem.post(portfolioData)
@@ -63,7 +59,7 @@ class PortfolioContainer extends Component {
   }
 
   handleEditPortfolio(portfolioData) {
-    PortfolioItem.update(portfolioData)
+    PortfolioItem.buyCurrency(portfolioData)
       .then(portfolio => this.setState({ portfolio, editPortfolio: null })
     );
   }
@@ -98,7 +94,8 @@ class PortfolioContainer extends Component {
         <FolioForm
           cryptos={this.state.cryptos}
           title="Add New Crypto Purchase"
-          onPortfolioSubmit={this.handleEditPortfolio}></FolioForm>
+          onPortfolioSubmit={this.handleEditPortfolio}
+          portfolio={null}></FolioForm>
       </div>
     );
   }

@@ -58,11 +58,11 @@ const createRouter = function (collection) {
 
   router.post('/:id/buy', (req, res) => {
     const id = req.params.id;
-    const currencyToBuy = req.body;
+    const currencyData = req.body;
     collection
       .findOne({ _id: ObjectID(id) })
       .then(buyer => {
-        buyer.currency.push(currencyToBuy.currency);
+        buyer.wallet.push(currencyData);
         delete buyer._id
 
         collection.findOneAndUpdate(

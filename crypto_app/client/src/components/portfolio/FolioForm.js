@@ -7,7 +7,7 @@ class PortfolioForm extends Component {
     super(props);
 
     this.state = {
-      portfolio: this.props.portfolio || { date: "", currency: "", amount: "", _id:"5dc18094ca30803fad2f943d"}
+      portfolio: this.props.portfolio || { date: "", currency: "", amount: "", _id:"5dc1a1283472ae9add7812cd"}
     };
 
     this.handleDateChange = this.handleDateChange.bind(this);
@@ -33,12 +33,15 @@ class PortfolioForm extends Component {
 
   handleFormSubmit(event) {
     event.preventDefault();
-    this.props.onPortfolioSubmit(this.state.portfolio);
-    this.setState({
-      portfolio: {
-        date: "",
-        currency: "",
-        amount: ""
+    this.props.onPortfolioSubmit({...this.state.portfolio});
+    this.setState((prevState) => {
+      return {
+        portfolio: {
+          _id: prevState.portfolio._id,
+          date: "",
+          currency: "",
+          amount: ""
+        }
       }
     });
 
