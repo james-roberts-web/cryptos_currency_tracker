@@ -9,8 +9,6 @@ const PortfolioItem = ({ portfolio, onPortfolioDelete, onPortfolioSelect }) => {
       <li>{portfolio.date}  {portfolio.currency}  {portfolio.amount}
       <button onClick={() => onPortfolioDelete(portfolio._id)}>Delete</button>
       <button onClick={() => onPortfolioSelect(portfolio)}>Edit</button>
-
-      Value: £{}
       </li>
     </div>
   );

@@ -38,7 +38,7 @@ class TopContainer extends Component {
         <Route
           exact path={`${this.props.match.path}`}
           render={() => (<SummaryChart cryptos={ this.state.cryptos }/>)} />
-          
+
         <Route
           path={`${this.props.match.path}/:currency`}
           render={({match}) => (<DetailContainer match={match} cryptos={ this.state.cryptos } />)} />

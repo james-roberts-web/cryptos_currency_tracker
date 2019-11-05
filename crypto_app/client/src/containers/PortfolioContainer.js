@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import PortfolioItem from '../components/portfolio/PortfolioItem';
+import PortfolioItem from '../models/PortfolioItem';
 import FolioList from '../components/portfolio/FolioList';
 import FolioForm from '../components/portfolio/FolioForm';
 import FolioTotal from '../components/portfolio/FolioTotal'
 import '../components/portfolio/portfolio.css'
+
 
 class PortfolioContainer extends Component {
 
@@ -59,7 +60,8 @@ class PortfolioContainer extends Component {
 
   handleEditPortfolio(portfolioData) {
     PortfolioItem.update(portfolioData)
-      .then(portfolio => this.setState({ portfolio, editPortfolio: null }));
+      .then(portfolio => this.setState({ portfolio, editPortfolio: null })
+    );
   }
 
   handleCurrencySelected(name) {
@@ -89,8 +91,7 @@ class PortfolioContainer extends Component {
         <FolioForm
           cryptos={this.state.cryptos}
           title="Add New Crypto Purchase"
-          onPortfolioSubmit={this.handleNewPortfolio}></FolioForm>
-        
+          onPortfolioSubmit={this.handleEditPortfolio}></FolioForm>
       </div>
     );
   }

@@ -2,18 +2,22 @@ import React from 'react';
 
 const FolioSelector = (props) => {
 
-  const currencyNodes = props.cryptos.map((currency, index) => {
+  const currencyNodes = props.cryptos.map(currency => {
     return(
       <option
         value={ currency.id }
         key={ currency.symbol }>
-        {currency.name}
+        { currency.name }
       </option>
     );
   });
 
   function handleChange(event){
-    props.currencyChange(event.target.value)
+    const value = event.target.value
+    const foundCurrency = props.cryptos.find(currency => {
+      return currency.id === value
+    })
+    props.currencyChange(foundCurrency)
   }
 
 

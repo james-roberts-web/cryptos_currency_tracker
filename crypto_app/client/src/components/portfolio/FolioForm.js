@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import FolioSelector from '../portfolio/FolioSelector'
 
+
 class PortfolioForm extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      portfolio: this.props.portfolio || { date: "", currency: "", amount: "" }
+      portfolio: this.props.portfolio || { date: "", currency: "", amount: "", _id:"5dc1658d8a97af9245fb4d59"}
     };
 
     this.handleDateChange = this.handleDateChange.bind(this);
@@ -40,16 +41,18 @@ class PortfolioForm extends Component {
         amount: ""
       }
     });
+
   }
 
   render() {
+
     return (
       <form id="portfolioForm" onSubmit={this.handleFormSubmit}>
         <h3>{this.props.title}</h3>
 
         <div className="input-group">
           <label>Date of purchase:</label>
-          <input type="date" required
+          <input type="date" defaultValue required
             value={this.state.portfolio.date}
             onChange={this.handleDateChange}></input>
         </div>
@@ -69,7 +72,7 @@ class PortfolioForm extends Component {
         </div>
 
         <div className="input-group">
-          <button type="submit">Submit</button>
+          <button type="submit" onSubmit="handleFormSubmit">Submit</button>
         </div>
 
       </form>
