@@ -50,7 +50,8 @@ class PortfolioContainer extends Component {
 
   handleEditPortfolio(portfolioData) {
     PortfolioItem.update(portfolioData)
-      .then(portfolio => this.setState({ portfolio, editPortfolio: null }));
+      .then(portfolio => this.setState({ portfolio, editPortfolio: null })
+    );
   }
 
   handleCurrencySelected(name) {
@@ -77,7 +78,7 @@ class PortfolioContainer extends Component {
         <FolioForm
           cryptos={this.state.cryptos}
           title="Add New Crypto Purchase"
-          onPortfolioSubmit={this.handleNewPortfolio}></FolioForm>
+          onPortfolioSubmit={this.handleEditPortfolio}></FolioForm>
       </div>
     );
   }
