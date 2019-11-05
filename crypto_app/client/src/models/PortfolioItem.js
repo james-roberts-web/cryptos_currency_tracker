@@ -1,5 +1,5 @@
 class PortfolioItem {
-  static url = "http://localhost:3001/api/";
+  static url = "http://localhost:3001/api";
 
   static get() {
     return fetch(this.url)
@@ -20,12 +20,20 @@ class PortfolioItem {
     }).then(res => res.json());
   }
 
+  static buyCurrency(id, currency, quantity) {
+    return fetch(`${this.url}/${id}/buy`, {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({currency: currency, quantity: quantity})
+    }).then(res => res.json());
+  }
+
   static update(portfolio) {
     return fetch(`${this.url}/${portfolio._id}`, {
       method: "PUT",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(portfolio)
-    }).then(res => res.json());
+    }).then(res => res.json())
   }
 }
 
