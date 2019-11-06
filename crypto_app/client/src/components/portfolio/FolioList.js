@@ -1,5 +1,7 @@
 import React from 'react';
 import PortfolioItem from './PortfolioItem';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashAlt, faEdit } from '@fortawesome/free-solid-svg-icons'
 
 
 const FolioList = ({ portfolio, onPortfolioDelete, onPortfolioSelect, id, cryptos }) => {
@@ -43,8 +45,8 @@ const FolioList = ({ portfolio, onPortfolioDelete, onPortfolioSelect, id, crypto
         <th>Date Purchased</th>
         <th>Amount</th>
         <th>Value</th>
-        <th></th>
-        <th></th>
+        <th><FontAwesomeIcon icon={faTrashAlt} /></th>
+        <th><FontAwesomeIcon icon={faEdit} /></th>
 
 
         {portfolioNodes}
