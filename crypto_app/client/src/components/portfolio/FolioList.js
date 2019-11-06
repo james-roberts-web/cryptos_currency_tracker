@@ -17,10 +17,24 @@ const FolioList = ({ portfolio, onPortfolioDelete, onPortfolioSelect, id, crypto
         ></PortfolioItem>
     ));
 
+
+      const valuesArray = portfolioNodes.map(item => {
+        return item.props.portfolio
+      })
+
+      const mess = valuesArray.map(item => {
+        return item.currency.current_price * item.amount
+      })
+
+      const totalPortfolio = mess.reduce((total, number) => {
+        return total + number
+      },0)
+
+
   return (
     <div id="portfolioList">
       {portfolioNodes}
-      PortfolioTotal =
+      PortfolioTotal = {totalPortfolio}
     </div>
   )
 }
