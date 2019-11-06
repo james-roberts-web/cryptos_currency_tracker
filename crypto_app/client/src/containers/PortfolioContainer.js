@@ -74,7 +74,7 @@ render() {
 
   return (
     <div id="portfolioContainer">
-    <h1>Portfolio</h1>
+    <h1></h1>
     <FolioList
     cryptos={this.state.cryptos}
     onPortfolioSelect={this.handleSelectPortfolio}
@@ -83,12 +83,13 @@ render() {
     id={this.state.portfolio._id}></FolioList>
 
 
-
+    <div className="folioForm">
     <FolioForm
     cryptos={this.state.cryptos}
     title="Add New Crypto Purchase"
     onPortfolioSubmit={this.handleEditPortfolio}
     portfolio={null}></FolioForm>
+    </div>
     </div>
   );
 }

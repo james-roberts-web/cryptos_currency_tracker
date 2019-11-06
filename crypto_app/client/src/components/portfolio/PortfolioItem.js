@@ -12,10 +12,12 @@ const PortfolioItem = ({ portfolio, onPortfolioDelete, onPortfolioSelect, id, cr
 
   return (
     <div className="portfolio">
-      <li>{portfolio.amount} units of {portfolio.currency.name} purchased on {portfolio.date} value: £ {value}
-      <button onClick={() => onPortfolioDelete(portfolio)}>Delete</button>
-      <button onClick={() => onPortfolioSelect(portfolio)}>Edit</button>
-      </li>
+
+      
+        <td>{portfolio.currency.name}</td>  <td>{portfolio.date}</td>  <td>{portfolio.amount} </td><td> £{value.toFixed(2)}</td>
+        <td><button onClick={() => onPortfolioDelete(portfolio)}>Delete</button></td>
+        <td><button onClick={() => onPortfolioSelect(portfolio)}>Edit</button></td>
+
 
     </div>
   );

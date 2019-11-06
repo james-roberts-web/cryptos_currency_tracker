@@ -11,3 +11,31 @@
   justify-content: center;
 
 }
+
+table, td, th, td{
+width:100%;
+vertical-align:middle;
+}
+
+thead, tbody{
+
+}
+
+
+.folioForm{
+  display:flex;
+  justify-content: center;
+  margin:10%;
+  background-color: white;
+  font-size: 1.2em;
+  Padding: 20px;
+  border: solid 1px #002856;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#portfolioTotal{
+  display:flex;
+  justify-content: center;
+  padding: 5%
+}
