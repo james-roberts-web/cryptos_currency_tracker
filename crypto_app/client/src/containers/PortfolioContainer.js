@@ -41,21 +41,10 @@ class PortfolioContainer extends Component {
     }));
   }
 
-
   handleDeletePortfolio(data) {
-    const newArray =[];
-    this.state.portfolio.wallet.map(function(wallet) {
-      if (wallet.currency !== data.currency){
-        newArray.push(wallet.currency)}
-
-  })
+    PortfolioItem.deleteCoin(data, this.state.portfolio._id)
+    .then(portfolio => this.setState({portfolio, editPortfolio: null}))
 }
-
-
-
-
-
-
 
   handleSelectPortfolio(editPortfolio) {
     this.setState({ editPortfolio });
@@ -90,7 +79,7 @@ render() {
     cryptos={this.state.cryptos}
     onPortfolioSelect={this.handleSelectPortfolio}
     onPortfolioDelete={this.handleDeletePortfolio}
-    portfolios={this.state.portfolio.wallet}
+    portfolio={this.state.portfolio.wallet}
     id={this.state.portfolio._id}></FolioList>
 
 

@@ -30,10 +30,8 @@ class PortfolioItem {
     }).then(res => res.json());
   }
 
-  static deleteCoin(data) {
-    const id = data._id;
-    delete data._id;
-    return fetch(`${this.url}/${id}/buy`, {
+  static deleteCoin(data, id) {
+    return fetch(`${this.url}/${id}/delete-coin`, {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ date: data.date, currency: data.currency, amount: data.amount })
