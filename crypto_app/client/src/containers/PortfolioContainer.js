@@ -46,8 +46,6 @@ class PortfolioContainer extends Component {
     .then(portfolio => this.setState({portfolio, editPortfolio: null}))
 }
 
-}
-
   handleSelectPortfolio(editPortfolio) {
     this.setState({ editPortfolio });
   }
