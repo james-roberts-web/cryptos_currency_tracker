@@ -56,7 +56,7 @@ class PortfolioForm extends Component {
         <h3 id="addCurrencyTitle">Add New Currency</h3>
 
         <div className="input-group">
-          <label>Date of purchase:  </label>
+          <label>Date:  </label>
           <input type="date" required
             id="datePurchase" value={this.state.portfolio.date}
             onChange={this.handleDateChange}></input>
