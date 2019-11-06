@@ -34,7 +34,7 @@ const FolioList = ({ portfolio, onPortfolioDelete, onPortfolioSelect, id, crypto
   return (
     <div id="portfolioList">
       {portfolioNodes}
-      PortfolioTotal = {totalPortfolio}
+      PortfolioTotal = £{totalPortfolio.toPrecision(7)}
     </div>
   )
 }
