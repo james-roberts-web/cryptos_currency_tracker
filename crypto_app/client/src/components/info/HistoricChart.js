@@ -41,7 +41,7 @@ const HistoricChart = (props) => {
       data={chartPriceData}
       options={priceOptions}
       width="25%"
-      height="150px"
+      height="250px"
       legendToggle
       />
     );
@@ -54,7 +54,7 @@ const HistoricChart = (props) => {
       data={chartMCapData}
       options={mCapOptions}
       width="25%"
-      height="150px"
+      height="250px"
       legendToggle
       />
     );
@@ -67,7 +67,7 @@ const HistoricChart = (props) => {
       data={chartVolumeData}
       options={volumeOptions}
       width="25%"
-      height="150px"
+      height="250px"
       legendToggle
       />
     );
