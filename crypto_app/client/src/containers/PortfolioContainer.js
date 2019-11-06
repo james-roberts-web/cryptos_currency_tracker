@@ -41,7 +41,6 @@ class PortfolioContainer extends Component {
     }));
   }
 
-
   handleDeletePortfolio(data) {
     const newArray =[];
     this.state.portfolio.wallet.map(function(wallet) {
@@ -49,8 +48,8 @@ class PortfolioContainer extends Component {
         newArray.push(wallet.currency)}
 
   })
-}
 
+}
 
 
 
@@ -90,7 +89,7 @@ render() {
     cryptos={this.state.cryptos}
     onPortfolioSelect={this.handleSelectPortfolio}
     onPortfolioDelete={this.handleDeletePortfolio}
-    portfolios={this.state.portfolio.wallet}
+    portfolio={this.state.portfolio.wallet}
     id={this.state.portfolio._id}></FolioList>
 
 

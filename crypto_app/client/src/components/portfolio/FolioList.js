@@ -2,13 +2,14 @@ import React from 'react';
 import PortfolioItem from './PortfolioItem';
 
 
-const FolioList = ({ portfolios, onPortfolioDelete, onPortfolioSelect, id }) => {
+const FolioList = ({ portfolio, onPortfolioDelete, onPortfolioSelect, id, cryptos }) => {
 
-  if (!portfolios) return null;
+  if (!portfolio) return null;
 
-  const portfolioNodes = portfolios.map((portfolio, index) => (
+  const portfolioNodes = portfolio.map((portfolio, index) => (
       <PortfolioItem
         key={index}
+        cryptos={cryptos}
         portfolio={portfolio}
         onPortfolioDelete={onPortfolioDelete}
         onPortfolioSelect={onPortfolioSelect}
@@ -19,6 +20,7 @@ const FolioList = ({ portfolios, onPortfolioDelete, onPortfolioSelect, id }) => 
   return (
     <div id="portfolioList">
       {portfolioNodes}
+      PortfolioTotal =
     </div>
   )
 }
