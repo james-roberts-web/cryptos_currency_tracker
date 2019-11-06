@@ -43,12 +43,7 @@ class PortfolioContainer extends Component {
 
 
   handleDeletePortfolio(data) {
-    const newArray =[];
-    this.state.portfolio.wallet.map(function(wallet) {
-      if (wallet.currency !== data.currency){
-        newArray.push(wallet.currency)}
-
-  })
+    PortfolioItem.deleteCoin(data, this.state.portfolio._id)
 }
 
 
