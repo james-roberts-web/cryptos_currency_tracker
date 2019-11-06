@@ -52,7 +52,7 @@ class PortfolioForm extends Component {
   render() {
 
     return (
-      <form id="portfolioForm" onSubmit={this.handleFormSubmit}>
+      <form id="portfolioForm" onSubmit={this.handleFormSubmit} >
         <h3>{this.props.title}</h3>
 
         <div className="input-group">
@@ -66,6 +66,7 @@ class PortfolioForm extends Component {
         <div className="input-group">
           <label>Currency:</label>
           <FolioSelector
+          className="currency-selector"
           cryptos={this.props.cryptos}
           currencyChange={this.handleCurrencyChange}/>
         </div>

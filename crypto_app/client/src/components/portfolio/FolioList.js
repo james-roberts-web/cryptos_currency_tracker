@@ -32,28 +32,26 @@ const FolioList = ({ portfolio, onPortfolioDelete, onPortfolioSelect, id, crypto
 
 
   return (
-    <div id="overflow-x:auto;">
+    <div>
       <div id="portfolioTotal">
       <h1>Portfolio Total = £{totalPortfolio.toFixed(2)}</h1>
       </div>
 
-      <table>
-        <th>Name</th>
+      <table id="table">
+
+        <th >Name</th>
         <th>Date Purchased</th>
         <th>Ammount</th>
         <th>Value</th>
         <th></th>
         <th></th>
 
-        <tr>
-          {portfolioNodes}
-        </tr>
-    
+
+        {portfolioNodes}
+
+
       </table>
     </div>
-
-
-
 
   )
 }
