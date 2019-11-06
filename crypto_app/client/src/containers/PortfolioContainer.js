@@ -86,7 +86,6 @@ render() {
     <div className="folioForm">
     <FolioForm
     cryptos={this.state.cryptos}
-    title="Add New Crypto Purchase"
     onPortfolioSubmit={this.handleEditPortfolio}
     portfolio={null}></FolioForm>
     </div>

@@ -33,11 +33,11 @@ th, td {
   white-space: nowrap;
 }
 
-thead, tbody{
+#addCurrencyTitle{
+  text-align: center;
+  margin-left:20px;
 
 }
-
-
 .folioForm{
   display:flex;
   justify-content: center;
@@ -61,15 +61,41 @@ thead, tbody{
 
 .input-group{
   display:flex;
-  justify-content:space-around;
-  padding:10px;
+  justify-content:flex-start;
+  padding-left:10px;
+  padding-top:10px;
+  align-items: center;
 }
 
-.currency-selector{
+#folio-selector{
     font-size: 0.8em;
     padding-left: 15px;
-    margin: 0;
-    width: 525px;
+    width: 425px;
     height: 50px;
 
+}
+
+#submitButton{
+  margin:auto;
+  font-size: 0.8em;
+  padding-left: 15px;
+  width: 100px;
+  height: 50px;
+  border-radius: 15px;
+  background-color: #002856;
+  color:white;
+  margin-top:10px;
+}
+
+#amountBox{
+  margin-left:17px;
+  padding-left:15px;
+  height:40px;
+  font-size: 1em
+}
+#datePurchase{
+  margin-left:17px;
+  padding-left:15px;
+  height:40px;
+  font-size: 1em;
 }

@@ -53,33 +53,33 @@ class PortfolioForm extends Component {
 
     return (
       <form id="portfolioForm" onSubmit={this.handleFormSubmit} >
-        <h3>{this.props.title}</h3>
+        <h3 id="addCurrencyTitle">Add New Currency</h3>
 
         <div className="input-group">
-          <label>Date of purchase:</label>
+          <label>Date of purchase:  </label>
           <input type="date" required
-            value={this.state.portfolio.date}
+            id="datePurchase" value={this.state.portfolio.date}
             onChange={this.handleDateChange}></input>
         </div>
 
 
         <div className="input-group">
-          <label>Currency:</label>
+          <label>Currency: </label>
           <FolioSelector
-          className="currency-selector"
           cryptos={this.props.cryptos}
           currencyChange={this.handleCurrencyChange}/>
         </div>
 
         <div className="input-group">
-          <label>Amount:</label>
+          <label>Amount:  </label>
           <input type="text" required
+            id="amountBox"
             value={this.state.portfolio.amount}
             onChange={this.handleAmountChange}></input>
         </div>
 
         <div className="input-group">
-          <button type="submit">Submit</button>
+          <button id="submitButton" type="submit">Submit</button>
         </div>
 
       </form>
