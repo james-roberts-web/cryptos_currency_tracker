@@ -38,9 +38,16 @@ class PortfolioItem {
     }).then(res => res.json());
   }
 
+  static editPortfolio(data, id) {
+    return fetch(`${this.url}/${id}/edit`, {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ date: data.date, currency: data.currency, amount: data.amount })
+    }).then(res => res.json());
+  }
 
 
-  static update(portfolio) {
+  static update(portfolio, id) {
     return fetch(`${this.url}/${portfolio._id}`, {
       method: "PUT",
       headers: { 'Content-Type': 'application/json' },
