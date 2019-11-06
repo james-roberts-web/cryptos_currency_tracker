@@ -37,3 +37,18 @@ table{
 .selector{
   margin:20px;
 }
+
+.uparrow{
+  display:block;
+  float:right;
+color:green;
+  font-size: 10em;
+}
+
+
+.downarrow{
+  display:block;
+  float:right;
+color:red;
+  font-size: 10em;
+}

@@ -47,6 +47,8 @@ class PortfolioForm extends Component {
 
   }
 
+
+
   render() {
 
     return (
@@ -59,6 +61,7 @@ class PortfolioForm extends Component {
             value={this.state.portfolio.date}
             onChange={this.handleDateChange}></input>
         </div>
+
 
         <div className="input-group">
           <label>Currency:</label>
