@@ -14,7 +14,7 @@
 
 #table{
   margin:auto;
-  width:600px;
+  width:700px;
   border-radius: 15px;
   Padding: 20px;
   border: solid 1px #002856;
@@ -24,8 +24,13 @@
 
 
 table, td, th, td{
-justify-content: center;
-vertical-align:middle;
+
+  justify-content: center;
+  vertical-align:middle;
+}
+
+th, td {
+  white-space: nowrap;
 }
 
 thead, tbody{

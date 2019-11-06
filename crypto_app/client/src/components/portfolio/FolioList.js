@@ -41,7 +41,7 @@ const FolioList = ({ portfolio, onPortfolioDelete, onPortfolioSelect, id, crypto
 
         <th >Name</th>
         <th>Date Purchased</th>
-        <th>Ammount</th>
+        <th>Amount</th>
         <th>Value</th>
         <th></th>
         <th></th>

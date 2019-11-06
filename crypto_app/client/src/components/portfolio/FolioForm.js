@@ -7,7 +7,7 @@ class PortfolioForm extends Component {
     super(props);
 
     this.state = {
-      portfolio: this.props.portfolio || { date: "", currency: "", amount: "", _id:"5dc2902001e5486a513d5798"}
+      portfolio: this.props.portfolio || { date: "", currency: "", amount: "", _id:"5dc2d735e0a94daabd8ecc22"}
     };
 
     this.handleDateChange = this.handleDateChange.bind(this);

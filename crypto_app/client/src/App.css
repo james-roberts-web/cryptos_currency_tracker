@@ -63,8 +63,7 @@ table, th, td {
   border-collapse: collapse;
   height: 40px;
   width: 100%;
-  padding: 5px;
-  padding-left: 15px;
+  padding: 5px 15px;
   color: #002856;
 }
 table{
