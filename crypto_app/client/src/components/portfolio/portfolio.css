@@ -1,4 +1,13 @@
-.portfolioList{
+.portfolioList {
   display:flex;
   flex-direction: row;
+  justify-content: center;
+
+}
+
+.portfolioContainer {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+
 }

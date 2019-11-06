@@ -6,7 +6,7 @@ const HistoricChart = (props) => {
 
   const priceOptions = {
     title: "Price Last Month",
-    width:200,
+    width:500,
     hAxis: { title: "Date"},
     vAxis: { title: "Price" },
     legend: "none"
@@ -14,7 +14,7 @@ const HistoricChart = (props) => {
 
   const mCapOptions = {
     title: "MarketCap Last Month",
-    width:200,
+    width:500,
     hAxis: { title: "Date"},
     vAxis: { title: "MarketCap" },
     legend: "none"
@@ -22,14 +22,14 @@ const HistoricChart = (props) => {
 
   const volumeOptions = {
     title: "Volume Last Month",
-    width:200,
+    width:500,
     hAxis: { title: "Date"},
     vAxis: { title: "Volume" },
     legend: "none"
   };
 
   const chartPriceData = [['Date', 'Price'], ...props.historicData.prices];
-  
+
   const chartMCapData =[['Date', 'Cap'], ...props.historicData.marketCaps];
 
   const chartVolumeData =[['Date', 'Volume'], ...props.historicData.totalVolumes];

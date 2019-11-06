@@ -9,18 +9,22 @@ const CryptoDetail = (props) => {
   const arrowIndicator = (props.currency.price_change_percentage_1h_in_currency > 0) ? <FontAwesomeIcon icon={faArrowUp} /> : <FontAwesomeIcon icon={faArrowDown} />
   return (
     <div className="details">
+    <div>
+      
+    </div>
     <div className={props.currency.price_change_percentage_1h_in_currency > 0 ? 'uparrow' : 'downarrow'}>
     { arrowIndicator }
     </div>
+
     <img src={props.currency.image} alt = "currency logo"></img>
       <h3>{ props.currency.name } </h3>
-      <h4>{props.currency.symbol}</h4>
+      <h4>Currency ID: {props.currency.symbol}</h4>
       <table>
         <tbody>
         <tr>
           <td>
             Current Price:
-            
+
           </td>
           <td>
             £{props.currency.current_price}

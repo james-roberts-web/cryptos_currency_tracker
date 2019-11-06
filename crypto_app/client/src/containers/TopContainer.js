@@ -32,7 +32,7 @@ class TopContainer extends Component {
   render() {
     return (
       <div className="main">
-        <h1>My Cryptos App</h1>
+        <h1>Cryptos Currency Wallet</h1>
         <CurrencySelector cryptos={this.state.cryptos} onCurrencySelected={ this.handleCurrencySelected }/>
 
         <Route

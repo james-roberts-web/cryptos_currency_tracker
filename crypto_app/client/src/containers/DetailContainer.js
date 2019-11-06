@@ -57,7 +57,9 @@ class DetailContainer extends Component {
       <div className="detail">
       <h1>{ this.state.currency.name }</h1>
       <CryptoDetail currency={this.state.currency}/>
+      <div className="historic-charts">
       <HistoricChart currency={this.state.currency.name} historicData={this.state.historicData} />
+      </div>
       </div>
     )
   }
