@@ -41,12 +41,12 @@ class PortfolioContainer extends Component {
     }));
   }
 
-
   handleDeletePortfolio(data) {
     PortfolioItem.deleteCoin(data, this.state.portfolio._id)
     .then(portfolio => this.setState({portfolio, editPortfolio: null}))
 }
 
+}
 
   handleSelectPortfolio(editPortfolio) {
     this.setState({ editPortfolio });
@@ -81,7 +81,7 @@ render() {
     cryptos={this.state.cryptos}
     onPortfolioSelect={this.handleSelectPortfolio}
     onPortfolioDelete={this.handleDeletePortfolio}
-    portfolios={this.state.portfolio.wallet}
+    portfolio={this.state.portfolio.wallet}
     id={this.state.portfolio._id}></FolioList>
 
 
