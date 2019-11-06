@@ -44,12 +44,8 @@ class PortfolioContainer extends Component {
 
   handleDeletePortfolio(data) {
     PortfolioItem.deleteCoin(data, this.state.portfolio._id)
+    .then(portfolio => this.setState({portfolio, editPortfolio: null}))
 }
-
-
-
-
-
 
 
   handleSelectPortfolio(editPortfolio) {
